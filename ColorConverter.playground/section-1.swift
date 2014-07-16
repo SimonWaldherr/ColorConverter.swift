@@ -35,4 +35,16 @@ func RGB2HSL(r: Int, g: Int, b: Int) -> (h: Int, s: Int, l: Int) {
     return (hi, si, li)
 }
 
+func CMYK2RGB(c: Int, m: Int, y: Int, k: Int) -> (r: Int, g: Int, b: Int) {
+    var cf = max(min(Float64(c)/255, 1), 0)
+    var mf = max(min(Float64(m)/255, 1), 0)
+    var yf = max(min(Float64(y)/255, 1), 0)
+    var kf = max(min(Float64(k)/255, 1), 0)
+    var rf = (1 - cf * (1 - kf) - kf)
+    var gf = (1 - mf * (1 - kf) - kf)
+    var bf = (1 - yf * (1 - kf) - kf)
+    return (Int(rf * 255), Int(gf * 255), Int(bf * 255))
+}
+
+CMYK2RGB(24, 0, 79, 71)
 RGB2HSL(99, 140, 69)
