@@ -5,12 +5,12 @@
 **implemented**
 
 * RGB2HSL
+* CMYK2RGB
 
 **todo**
 
 * HSL2RGB
 * RGB2CMYK
-* CMYK2RGB
 * HEX2RGB
 * RGB2HEX
 * RGB2YUV
